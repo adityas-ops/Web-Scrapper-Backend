@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer");
+const playwright = require("playwright");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -12,7 +12,7 @@ app.use(cors(corsOptions));
 
 app.get("/:query", async (req, res) => {
   keyword = req.params.query;
-  const browser = await puppeteer.launch();
+  const browser = await playwright.chromium.launch();
   const page = await browser.newPage();
   const url = `https://www.google.com/search?q=${keyword}`;
   console.log("url: ", url);
