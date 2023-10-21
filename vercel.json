@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "name": "my-backend",
+    "build": "npm run build",
+    "routes": [
+      {
+        "src": "./build/index.js",
+        "handler": "handler"
+      }
+    ]
+  }
+  
