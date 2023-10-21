@@ -1,12 +1,16 @@
 {
     "version": 2,
-    "name": "my-backend",
-    "build": "npm run build",
+    "builds": [
+     {
+      "src": "server.js",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["dist/**"] }
+     }
+    ],
     "routes": [
-      {
-        "src": "./build/index.js",
-        "handler": "handler"
-      }
+     {
+      "src": "/(.*)",
+      "dest": "server.js"
+     }
     ]
-  }
-  
+   }
